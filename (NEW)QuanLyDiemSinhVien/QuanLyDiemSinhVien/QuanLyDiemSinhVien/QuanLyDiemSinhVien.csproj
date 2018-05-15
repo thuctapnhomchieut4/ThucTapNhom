@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C0560CF7-8EFA-4BDE-BC50-91F7A70875F0}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>QuanLyDiemSinhVien</RootNamespace>
+    <AssemblyName>QuanLyDiemSinhVien</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DMKhoa\frmDMKhoa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DMKhoa\frmDMKhoa.Designer.cs">
+      <DependentUpon>frmDMKhoa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DMMonHoc\frmDMMonHoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DMMonHoc\frmDMMonHoc.Designer.cs">
+      <DependentUpon>frmDMMonHoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DMLop\frmDMLop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DMLop\frmDMLop.Designer.cs">
+      <DependentUpon>frmDMLop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Diem\frmDMDiem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Diem\frmDMDiem.Designer.cs">
+      <DependentUpon>frmDMDiem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DMKhoa\frmThemDMKhoa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DMKhoa\frmThemDMKhoa.Designer.cs">
+      <DependentUpon>frmThemDMKhoa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DMMonHoc\frmThemDMMonHoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DMMonHoc\frmThemDMMonHoc.Designer.cs">
+      <DependentUpon>frmThemDMMonHoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DMLop\frmThemDMLop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DMLop\frmThemDMLop.Designer.cs">
+      <DependentUpon>frmThemDMLop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Diem\frmThemDMDiem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Diem\frmThemDMDiem.Designer.cs">
+      <DependentUpon>frmThemDMDiem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSSinhVien\frmSinhVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DSSinhVien\frmSinhVien.Designer.cs">
+      <DependentUpon>frmSinhVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DSSinhVien\frmThemSinhVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DSSinhVien\frmThemSinhVien.Designer.cs">
+      <DependentUpon>frmThemSinhVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Diem\frmThemDMDiem.resx">
+      <DependentUpon>frmThemDMDiem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DMKhoa\frmDMKhoa.resx">
+      <DependentUpon>frmDMKhoa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DMLop\frmDMLop.resx">
+      <DependentUpon>frmDMLop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DMLop\frmThemDMLop.resx">
+      <DependentUpon>frmThemDMLop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DMMonHoc\frmDMMonHoc.resx">
+      <DependentUpon>frmDMMonHoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DMMonHoc\frmThemDMMonHoc.resx">
+      <DependentUpon>frmThemDMMonHoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Diem\frmDMDiem.resx">
+      <DependentUpon>frmDMDiem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSSinhVien\frmThemSinhVien.resx">
+      <DependentUpon>frmThemSinhVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DMKhoa\frmThemDMKhoa.resx">
+      <DependentUpon>frmThemDMKhoa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DSSinhVien\frmSinhVien.resx">
+      <DependentUpon>frmSinhVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
