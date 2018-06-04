@@ -21,7 +21,7 @@ namespace QuanLyDiemSinhVien
         private void connect()
         {
             //String cn = @"server ='DESKTOP-J51JA3J\SQLEXPRESS' ;database ='Project_QuanlythuvienMTA' ;Integrated Security = true";//;Integrated Security = false
-            String cn = @"server ='DESKTOP-J51JA3J\SQLEXPRESS' ;database ='Project_QuanlySinhVien' ;Integrated Security = true";//;Integrated Security = false
+            String cn = @"server ='DUC-PC\SQLEXPRESS' ;database ='Project_QuanlySinhVien' ;Integrated Security = true";//;Integrated Security = false
             con = new SqlConnection(cn);
             con.Open();
         }
@@ -83,12 +83,12 @@ namespace QuanLyDiemSinhVien
         public void loadcomboBox1()
         {
             string sql = "select MaKhoa, TenKhoa from DMKhoa";
-            SqlCommand com = new SqlCommand(sql, con);
-            SqlDataAdapter da = new SqlDataAdapter(com);
-            DataSet ds = new DataSet();
-            da.Fill(ds, "DMKhoa");
-            comboBox1.DataSource = ds.Tables[0];
-            //comboBoxMaMH.DisplayMember = "TenLop";
+            SqlCommand com = new SqlCommand(sql, con);//thực thi câu lệnh trong SQL
+            SqlDataAdapter da = new SqlDataAdapter(com);//vận chuyển dữ liệu
+            DataTable dt = new DataTable();//tạo 1 bảng ảo
+            da.Fill(dt); //đổ dữ liệu vào bảng ảo
+            comboBox1.DataSource = dt;
+            //comboBoxMaMH.DisplayMember = "TenKhoa";
             comboBox1.DisplayMember = "MaKhoa";
             comboBox1.ValueMember = "MaKhoa";
         }

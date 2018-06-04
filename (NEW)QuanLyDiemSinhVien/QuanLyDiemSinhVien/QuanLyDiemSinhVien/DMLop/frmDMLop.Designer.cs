@@ -46,7 +46,6 @@
             this.DiaDiemHoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ThoiGianHoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtTenLop = new System.Windows.Forms.TextBox();
-            this.txtMaKhoa = new System.Windows.Forms.TextBox();
             this.txtMaLop = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -56,6 +55,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.toolStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
@@ -117,13 +117,13 @@
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.txtDiaDiem);
             this.groupBox1.Controls.Add(this.txtThoiGianHoc);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.dataGridView3);
             this.groupBox1.Controls.Add(this.txtTenLop);
-            this.groupBox1.Controls.Add(this.txtMaKhoa);
             this.groupBox1.Controls.Add(this.txtMaLop);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
@@ -236,14 +236,6 @@
             this.txtTenLop.TabIndex = 14;
             this.txtTenLop.TextChanged += new System.EventHandler(this.txtTenLop_TextChanged);
             // 
-            // txtMaKhoa
-            // 
-            this.txtMaKhoa.Location = new System.Drawing.Point(103, 140);
-            this.txtMaKhoa.Name = "txtMaKhoa";
-            this.txtMaKhoa.Size = new System.Drawing.Size(403, 20);
-            this.txtMaKhoa.TabIndex = 13;
-            this.txtMaKhoa.TextChanged += new System.EventHandler(this.txtMaKhoa_TextChanged);
-            // 
             // txtMaLop
             // 
             this.txtMaLop.Location = new System.Drawing.Point(103, 88);
@@ -333,6 +325,14 @@
             this.toolStripButton6.Text = "Hiển Thị Tất Cả";
             this.toolStripButton6.Click += new System.EventHandler(this.toolStripButton6_Click);
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(103, 139);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(403, 21);
+            this.comboBox1.TabIndex = 20;
+            // 
             // frmDMLop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -377,7 +377,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DiaDiemHoc;
         private System.Windows.Forms.DataGridViewTextBoxColumn ThoiGianHoc;
         private System.Windows.Forms.TextBox txtTenLop;
-        private System.Windows.Forms.TextBox txtMaKhoa;
         private System.Windows.Forms.TextBox txtMaLop;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -387,5 +386,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ToolStrip toolStrip2;
         private System.Windows.Forms.ToolStripButton toolStripButton6;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

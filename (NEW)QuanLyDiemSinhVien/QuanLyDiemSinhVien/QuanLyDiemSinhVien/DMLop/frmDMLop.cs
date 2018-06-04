@@ -20,7 +20,7 @@ namespace QuanLyDiemSinhVien
         }
         private void connect()
         {
-            String cn = @"server ='DESKTOP-J51JA3J\SQLEXPRESS' ;database ='Project_QuanlySinhVien' ;Integrated Security = true";//;Integrated Security = false
+            String cn = @"server ='DUC-PC\SQLEXPRESS' ;database ='Project_QuanlySinhVien' ;Integrated Security = true";//;Integrated Security = false
             con = new SqlConnection(cn);
             con.Open();
         }
@@ -34,13 +34,13 @@ namespace QuanLyDiemSinhVien
             da.Fill(dt); //đổ dữ liệu vào bảng ảo
             dataGridView3.DataSource = dt; // đổ dữ liệu vào dG
             txtMaLop.Enabled = false;
-            txtMaKhoa.Enabled = false;
+            //txtMaKhoa.Enabled = false;
         }
         public DataTable truyvan(string sql, SqlConnection con)
         {
-            DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter(sql, con);
-            da.Fill(dt);
+            SqlDataAdapter da = new SqlDataAdapter(sql, con);//vận chuyển dữ liệu & thực thi câu lệnh trong SQL
+            DataTable dt = new DataTable();//tạo 1 bảng ảo
+            da.Fill(dt);//đổ dữ liệu vào bảng ảo
             return dt;
         }
        
@@ -65,6 +65,18 @@ namespace QuanLyDiemSinhVien
                     }
                 }
             }
+        }
+        public void loadcomboBox1()
+        {
+            string sql = "select MaKhoa, TenKhoa from DMKhoa";
+            SqlCommand com = new SqlCommand(sql, con);//thực thi câu lệnh trong SQL
+            SqlDataAdapter da = new SqlDataAdapter(com);//vận chuyển dữ liệu
+            DataTable dt = new DataTable();//tạo 1 bảng ảo
+            da.Fill(dt); //đổ dữ liệu vào bảng ảo
+            comboBox1.DataSource = dt;
+            //comboBoxMaMH.DisplayMember = "TenKhoa";
+            comboBox1.DisplayMember = "MaKhoa";
+            comboBox1.ValueMember = "MaKhoa";
         }
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
@@ -99,6 +111,7 @@ namespace QuanLyDiemSinhVien
             connect();
             getdata();
             Load_Treeview();
+            loadcomboBox1();
         }
 
         private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -111,7 +124,7 @@ namespace QuanLyDiemSinhVien
             int index = dataGridView3.CurrentRow.Index;
             txtMaLop.Text = dataGridView3.Rows[index].Cells[0].Value.ToString();
             txtTenLop.Text = dataGridView3.Rows[index].Cells[1].Value.ToString();
-            txtMaKhoa.Text = dataGridView3.Rows[index].Cells[2].Value.ToString();
+            comboBox1.Text = dataGridView3.Rows[index].Cells[2].Value.ToString();
             txtDiaDiem.Text = dataGridView3.Rows[index].Cells[3].Value.ToString();
             txtThoiGianHoc.Text = dataGridView3.Rows[index].Cells[4].Value.ToString();
         }
@@ -149,7 +162,7 @@ namespace QuanLyDiemSinhVien
 
         private void toolStripButton2_Click_1(object sender, EventArgs e)
         {
-            string sua = "update DMLop set TenLop = N'"+txtTenLop.Text+"', DiaDiemHoc=N'"+txtDiaDiem.Text+"',ThoiGianHoc='"+txtThoiGianHoc.Text+"'  where MaLop='"+txtMaLop.Text+"'";
+            string sua = "update DMLop set TenLop = N'"+txtTenLop.Text+"', DiaDiemHoc=N'"+txtDiaDiem.Text+"',ThoiGianHoc='"+txtThoiGianHoc.Text+"',MaKhoa='"+comboBox1.Text+"'  where MaLop='"+txtMaLop.Text+"'";
             SqlCommand comSua = new SqlCommand(sua, con);
             comSua.ExecuteNonQuery();
             getdata();

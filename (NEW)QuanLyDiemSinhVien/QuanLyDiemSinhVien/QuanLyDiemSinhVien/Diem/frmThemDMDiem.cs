@@ -21,7 +21,7 @@ namespace QuanLyDiemSinhVien
         private void connect()
         {
             //String cn = @"server ='DESKTOP-J51JA3J\SQLEXPRESS' ;database ='Project_QuanlythuvienMTA' ;Integrated Security = true";//;Integrated Security = false
-            String cn = @"server ='DESKTOP-J51JA3J\SQLEXPRESS' ;database ='Project_QuanlySinhVien' ;Integrated Security = true";//;Integrated Security = false
+            String cn = @"server ='DUC-PC\SQLEXPRESS' ;database ='Project_QuanlySinhVien' ;Integrated Security = true";//;Integrated Security = false
             con = new SqlConnection(cn);
             con.Open();
         }
@@ -42,8 +42,8 @@ namespace QuanLyDiemSinhVien
                 getdata();
                 MessageBox.Show("Thêm mới thành công ");
                 this.Close();
-                frmDMDiem tg = new frmDMDiem();
-                tg.ShowDialog();         
+                //frmDMDiem tg = new frmDMDiem();
+                //tg.ShowDialog();         
         }
         public void loadcomboboxMaSV()
         {
